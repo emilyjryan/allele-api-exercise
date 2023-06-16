@@ -3,17 +3,30 @@
   font-weight: bold;
 }
 
-h1, h3 {
-  color: black;
+h1, h3, h4 {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+body {
+  background-image: url('/imgs/large-dna.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .hla-class-header {
   color: pink;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 .hla-class {
-  color: purple;
+  color: white;
   padding: 20px;
   font-size: 1.5em;
   width: 100%;
@@ -31,6 +44,8 @@ h1, h3 {
   display: flex;
   flex-direction: column;
   columns: 2;
+  background-color: white;
+  opacity: 0.9;
 }
 
 .allele {
@@ -40,12 +55,9 @@ h1, h3 {
 
 .allele-element {
   margin: 5px;
+  padding: 5px;
   font-size: 0.5em;
-  color: green;
+  color: black;
   font-weight: 400;
   text-align: center;
-}
-
-.allele-element {
-  padding: 5px;
 }
