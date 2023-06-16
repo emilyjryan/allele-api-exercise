@@ -16,7 +16,7 @@ const hlaDQ = document.getElementById('hla-dq');
 const hlaDR = document.getElementById('hla-dr');
 
 // Throwing the API url in a variable:
-const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=20&project=HLA';
+const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=200&project=HLA';
 
 // Fetch request to the API for the allele data:
 fetch(requestURL)
@@ -27,28 +27,27 @@ fetch(requestURL)
   .then((jsonData)=>{
     console.log('Allele data:', jsonData.data);
     let alleleData = jsonData.data;
+    // Console logs to make sure I'm accessing the specific part of the data I'm looking for:
     console.log(alleleData[0].accession);
     console.log(alleleData[0].name);
 
-    // Looping through the allele data to get the accession and name:
+   // For loop to loop through data array of objects to create separate divs for each allele accession/name pair:
     for (let i = 0; i < alleleData.length; i++) {
-      // Creating a new div for each allele:
       let newAllele = document.createElement('div');
-      // Adding the allele class to the div:
       newAllele.classList.add('allele');
 
+      // Creating individual divs for each accession and name, and then appending both to new parent div:
       let alleleAccession = document.createElement('div');
-      alleleAccession.innerHTML = alleleData[i].accession;
-      let alleleName = document.createElement('div');
-      alleleName.innerHTML = alleleData[i].name;
-
+      alleleAccession.classList.add('allele-element');
+      alleleAccession.innerHTML = alleleData[i].accession + ':';
       newAllele.appendChild(alleleAccession)
-      newAllele.appendChild(alleleName)
-      // Adding the allele name to the div:
-      // Adding the new div to the html:
-      // allAlleles[0].appendChild(newAllele);
 
-      // Conditional logic for how to sort them by isotype:
+      let alleleName = document.createElement('div');
+      alleleName.classList.add('allele-element');
+      alleleName.innerHTML = alleleData[i].name;
+      newAllele.appendChild(alleleName)
+
+      // Conditional logic for sorting them by isotype:
       if (alleleData[i].name.startsWith('A')) {
         hlaA.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('B')) {
@@ -66,7 +65,7 @@ fetch(requestURL)
     }
   }
   })
-  // Error catch in case something goes wrong with the request:
+  // Error catch function, in case something goes wrong with the main API request:
   .catch((error) => {
     console.log('Error fetching data from API', error);
   })
