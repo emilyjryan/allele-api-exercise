@@ -1,5 +1,26 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
 h1 {
   color: purple;
-  border: 4px solid black;
   text-align: center;
+}
+
+.hla-class {
+  color: red;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.isotype {
+  color: blue;
+  font-size: 1em;
+  text-align: center;
+}
+
+.allele {
+  color: green;
+  font-weight: 300;
 }
