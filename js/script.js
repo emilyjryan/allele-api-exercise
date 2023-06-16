@@ -16,7 +16,7 @@ const hlaDQ = document.getElementById('hla-dq');
 const hlaDR = document.getElementById('hla-dr');
 
 // Throwing the API url in a variable:
-const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=200&project=HLA';
+const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=500&project=HLA';
 
 // Fetch request to the API for the allele data:
 fetch(requestURL)
