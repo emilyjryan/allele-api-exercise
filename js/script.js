@@ -43,6 +43,7 @@ fetch(requestURL)
       // Adding the new div to the html:
       // allAlleles[0].appendChild(newType);
 
+      // Conditional logic for how to sort them by isotype:
       if (alleleData[i].name.startsWith('A')) {
         hlaA.appendChild(newType);
     } else if (alleleData[i].name.startsWith('B')) {
