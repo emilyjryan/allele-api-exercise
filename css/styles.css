@@ -24,7 +24,7 @@ h1, h3 {
 
 .isotype {
   padding: 10px;
-  margin: 2px;
+  margin: 10px;
   border: 2px solid black;
   height: 70vh;
   overflow-y: scroll;
