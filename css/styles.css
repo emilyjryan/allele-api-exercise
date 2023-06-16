@@ -3,39 +3,31 @@
   font-weight: bold;
 }
 
-/* html {
-  height: 100%;
-  background-image: url('/imgs/large-dna.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
-/* body {
-  height: 100vh;
-  overflow-y: hidden;
-} */
-
 h1, h3 {
   color: black;
-  text-align: center;
+}
+
+.hla-class-header {
+  color: pink;
+  font-size: 2em;
 }
 
 .hla-class {
-  color: green;
+  color: purple;
+  padding: 20px;
   font-size: 1.5em;
-  width: 100vh;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: row;
 }
 
 .isotype {
-  color: pink;
+  padding: 10px;
+  margin: 2px;
   border: 2px solid black;
-  font-size: 1em;
-  height:100vh;
+  height: 70vh;
   overflow-y: scroll;
-  text-align: center;
   display: flex;
   flex-direction: column;
   columns: 2;
@@ -48,9 +40,9 @@ h1, h3 {
 
 .allele-element {
   margin: 5px;
-  font-size: 1em;
-  color: red;
-  font-weight: 100;
+  font-size: 0.5em;
+  color: green;
+  font-weight: 400;
   text-align: center;
 }
 

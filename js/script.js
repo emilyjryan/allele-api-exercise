@@ -4,19 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('JS file loaded and running')
 
 // Defining variables from html elements:
-const allAlleles = document.getElementsByClassName('all-alleles');
-const classOne = document.getElementById('class-1');
-const classTwo = document.getElementById('class-2');
-const other = document.getElementById('other');
 const hlaA = document.getElementById('hla-a');
 const hlaB = document.getElementById('hla-b');
 const hlaC = document.getElementById('hla-c');
 const hlaDP = document.getElementById('hla-dp');
 const hlaDQ = document.getElementById('hla-dq');
 const hlaDR = document.getElementById('hla-dr');
+const other = document.getElementById('other');
 
 // Throwing the API url in a variable:
-const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=500&project=HLA';
+const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=1000&project=HLA';
 
 // Fetch request to the API for the allele data:
 fetch(requestURL)
