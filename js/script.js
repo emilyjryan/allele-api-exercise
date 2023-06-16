@@ -16,7 +16,7 @@ const hlaDQ = document.getElementById('hla-dq');
 const hlaDR = document.getElementById('hla-dr');
 
 // Throwing the API url in a variable:
-const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=200&project=HLA';
+const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=20&project=HLA';
 
 // Fetch request to the API for the allele data:
 fetch(requestURL)
@@ -33,31 +33,36 @@ fetch(requestURL)
     // Looping through the allele data to get the accession and name:
     for (let i = 0; i < alleleData.length; i++) {
       // Creating a new div for each allele:
-      let newType = document.createElement('div');
+      let newAllele = document.createElement('div');
       // Adding the allele class to the div:
-      newType.classList.add('allele');
-      // Adding the allele accession to the div:
-      newType.innerHTML = alleleData[i].accession;
+      newAllele.classList.add('allele');
+
+      let alleleAccession = document.createElement('div');
+      alleleAccession.innerHTML = alleleData[i].accession;
+      let alleleName = document.createElement('div');
+      alleleName.innerHTML = alleleData[i].name;
+
+      newAllele.appendChild(alleleAccession)
+      newAllele.appendChild(alleleName)
       // Adding the allele name to the div:
-      newType.innerHTML += ': ' + alleleData[i].name;
       // Adding the new div to the html:
-      // allAlleles[0].appendChild(newType);
+      // allAlleles[0].appendChild(newAllele);
 
       // Conditional logic for how to sort them by isotype:
       if (alleleData[i].name.startsWith('A')) {
-        hlaA.appendChild(newType);
+        hlaA.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('B')) {
-        hlaB.appendChild(newType);
+        hlaB.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('C')) {
-        hlaC.appendChild(newType);
+        hlaC.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('DP')) {
-        hlaDP.appendChild(newType);
+        hlaDP.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('DQ')) {
-        hlaDQ.appendChild(newType);
+        hlaDQ.appendChild(newAllele);
     } else if (alleleData[i].name.startsWith('DR')) {
-        hlaDR.appendChild(newType);
+        hlaDR.appendChild(newAllele);
     } else {
-        other.appendChild(newType);
+        other.appendChild(newAllele);
     }
   }
   })
