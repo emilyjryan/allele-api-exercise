@@ -33,6 +33,8 @@ h1, h3 {
   color: pink;
   border: 2px solid black;
   font-size: 1em;
+  height:100vh;
+  overflow-y: scroll;
   text-align: center;
   display: flex;
   flex-direction: column;
