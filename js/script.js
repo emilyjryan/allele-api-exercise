@@ -4,13 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('JS file loaded and running')
 
   // Defining variables from html elements:
+  const main = document.getElementById('main-header');
+
+  const loadingDiv = document.getElementById('loading');
+
+  // const hlaAHeader = document.getElementById('hla-a-header');
   const hlaA = document.getElementById('hla-a');
+
+  // const hlaBHeader = document.getElementById('hla-b-header');
   const hlaB = document.getElementById('hla-b');
+
+  // const hlaCHeader = document.getElementById('hla-c-header');
   const hlaC = document.getElementById('hla-c');
+
+  // const hlaDPHeader = document.getElementById('hla-dp-header');
   const hlaDP = document.getElementById('hla-dp');
+
+  // const hlaDQHeader = document.getElementById('hla-dq-header');
   const hlaDQ = document.getElementById('hla-dq');
+
+  // const hlaDRHeader = document.getElementById('hla-dr-header');
   const hlaDR = document.getElementById('hla-dr');
+
+  // const classHeaders = document.getElementsByClassName('hla-class-header');
   const other = document.getElementById('other');
+
+  const allAlleles = document.getElementById('all-alleles');
+
+  // console.log(allAlleles)
+
+  // const loadedContent = [hlaA, hlaB, hlaC, hlaDP, hlaDQ, hlaDR, other]
+  // const headers = [hlaAHeader, hlaBHeader, hlaCHeader, hlaDPHeader, hlaDQHeader, hlaDRHeader]
 
   // Function to create a separate parent div for each allele:
   const alleleDivCreator = () => {
@@ -50,6 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
+  let loading = true;
+
+  if (loading === true) {
+    allAlleles.style.display = 'none'; 
+
+  }
+
   // Creating a variable for the API url:
   const requestURL = 'https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=1000&project=HLA';
 
@@ -70,23 +101,30 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(alleleData[0].accession);
       console.log(alleleData[0].name);
 
+      loading = false;
+
     // For loop, to loop through each data object and create separate divs for each allele accession/name pair and then sort them based on isotype:
-      for (let i = 0; i < alleleData.length; i++) {
-        
-        // Creating parent div:
-        const newParentDiv = alleleDivCreator()
-        
-        // Creating both child divs, one for accession and one for name:
-        const newAlleleAccession = alleleElementDivCreator(newParentDiv);
-        newAlleleAccession.innerHTML = alleleData[i].accession + ':';
+      if (loading === false) {
+       allAlleles.style.display = 'block';
+       loadingDiv.style.display = 'none';
 
-        const newAlleleName = alleleElementDivCreator(newParentDiv);
-        const alleleString = newAlleleName.innerHTML += alleleData[i].name;
+        for (let i = 0; i < alleleData.length; i++) {
+          
+          // Creating parent div:
+          const newParentDiv = alleleDivCreator()
+          
+          // Creating both child divs, one for accession and one for name:
+          const newAlleleAccession = alleleElementDivCreator(newParentDiv);
+          newAlleleAccession.innerHTML = alleleData[i].accession + ':';
 
-        // Sorting them for display based on isotype:
-        isotypeSorter(newParentDiv, alleleString);
+          const newAlleleName = alleleElementDivCreator(newParentDiv);
+          const alleleString = newAlleleName.innerHTML += alleleData[i].name;
 
-      }
+          // Sorting them for display based on isotype:
+          isotypeSorter(newParentDiv, alleleString);
+
+        }
+    }
 
     })
 
