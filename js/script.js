@@ -5,36 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Defining variables from html elements:
   const main = document.getElementById('main-header');
-
   const loadingDiv = document.getElementById('loading');
-
-  // const hlaAHeader = document.getElementById('hla-a-header');
   const hlaA = document.getElementById('hla-a');
-
-  // const hlaBHeader = document.getElementById('hla-b-header');
   const hlaB = document.getElementById('hla-b');
-
-  // const hlaCHeader = document.getElementById('hla-c-header');
   const hlaC = document.getElementById('hla-c');
-
-  // const hlaDPHeader = document.getElementById('hla-dp-header');
   const hlaDP = document.getElementById('hla-dp');
-
-  // const hlaDQHeader = document.getElementById('hla-dq-header');
   const hlaDQ = document.getElementById('hla-dq');
-
-  // const hlaDRHeader = document.getElementById('hla-dr-header');
   const hlaDR = document.getElementById('hla-dr');
-
-  // const classHeaders = document.getElementsByClassName('hla-class-header');
   const other = document.getElementById('other');
-
   const allAlleles = document.getElementById('all-alleles');
-
-  // console.log(allAlleles)
-
-  // const loadedContent = [hlaA, hlaB, hlaC, hlaDP, hlaDQ, hlaDR, other]
-  // const headers = [hlaAHeader, hlaBHeader, hlaCHeader, hlaDPHeader, hlaDQHeader, hlaDRHeader]
 
   // Function to create a separate parent div for each allele:
   const alleleDivCreator = () => {
