@@ -1,22 +1,24 @@
 # RESTful API Exercise
 ## Using the IPD Database API to display allele data
 
-### Getting started
-I made a git repo to keep things organized and created all the necessary files for creating the webpage.
+### Steps
 
-Tested the API in Thunder Client, success
+* Created new github repository to keep things organized and created all the necessary files for building the webpage.
 
-Linked HTML, CSS, and JS files together
+* Tested the API in Thunder Client, success
 
-Created basic HTML structure for DOM manipulation
+* Linked HTML, CSS, and JS files together
 
-Created JS variables from HTML elements
+* Created basic HTML structure for the website
 
-Wrote fetch request flow, converted data to json, evaluated structure of data, error catching
+* Created JS variables from HTML elements for DOM manipulation
 
-Created variable to hold all data
+* Wrote fetch request functioning, converted data to json, evaluated structure of data, added error catching at the end
 
-For loop loops through all data array and creates a new HTML element for each allele accession/name pair
+* Created a variable array to hold all incoming data from request
 
-Conditional logic if/else decides which parent div to append the new child to, based on isotype
+* Built a for loops to loop through all data and create a new HTML element for each allele accession/name pair
 
+* Added conditional logic (if/else) to decide which parent div to append the new child to, based on isotype starting letter
+
+* Added some basic styling and page structure, including columns and scrolling for all the data.
