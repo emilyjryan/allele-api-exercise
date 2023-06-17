@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const hlaDR = document.getElementById('hla-dr');
   const other = document.getElementById('other');
   const allAlleles = document.getElementById('all-alleles');
+  const searchBox = document.getElementById('search-box');
+  const searchBtn = document.getElementById('search-btn');
+
+
+  searchBtn.addEventListener('click', () => {
+    console.log(searchBox.value)
+  })
 
   // Function to create a separate parent div for each allele:
   const alleleDivCreator = () => {
@@ -57,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (loading === true) {
     allAlleles.style.display = 'none'; 
-
   }
 
   // Creating a variable for the API url:
@@ -111,5 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((error) => {
       console.log('Error fetching data from API', error);
     })
+
+    // Event listener for search button:
+    // searchBtn.addEventListener('click', () => {
+    //   const searchInput = searchBox.value;
+    //   console.log(searchInput);
+    //   const allAlleles = document.querySelectorAll('.allele');
+    //   console.log(allAlleles);
+    //   for (let i = 0; i < allAlleles.length; i++) {
+    //     const alleleName = allAlleles[i].lastChild.innerText;
+    //     console.log(alleleName);
+    //     if (alleleName.includes(searchInput)) {
+    //       allAlleles[i].style.display = 'block';
+    //     } else {
+    //       allAlleles[i].style.display = 'none';
+    //     }
+    //   }
+    // })
 
   })
