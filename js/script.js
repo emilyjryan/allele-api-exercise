@@ -81,8 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newAlleleAccession.innerHTML = alleleData[i].accession + ':';
 
         const newAlleleName = alleleElementDivCreator(newParentDiv);
-        newAlleleName.innerHTML = alleleData[i].name;
-        const alleleString = newAlleleName.innerHTML
+        const alleleString = newAlleleName.innerHTML += alleleData[i].name;
 
         // Sorting them for display based on isotype:
         isotypeSorter(newParentDiv, alleleString);
