@@ -45,33 +45,74 @@ body {
   background-attachment: fixed;
 }
 
+.find {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#search-box {
+  padding: 8px;
+  width: 30vw;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+.search-div {
+  margin: 20px;
+  margin-bottom: 40px;
+}
+
+#search-btn {
+  padding: 8px;
+  width: 10vw;
+  background-color: pink;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: dark-grey;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 .hla-class-header {
   color: pink;
   font-size: 1.8em;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 .hla-class {
   color: white;
-  padding: 20px;
+  padding: 10px;
   font-size: 1.5em;
-  width: 100%;
+  width: 70%;
   text-align: center;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
 }
 
+#space {
+  /* display: none; */
+}
+
 .isotype {
-  padding: 10px;
   margin: 10px;
   border: 2px solid black;
   border-radius: 10px;
   height: 70vh;
+  width: 20vw;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   columns: 2;
   background-color: white;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .allele {
@@ -80,10 +121,16 @@ body {
 }
 
 .allele-element {
-  margin: 5px;
+  /* margin: 5px; */
   padding: 5px;
   font-size: 0.6em;
   color: black;
   font-weight: 400;
+  width: 100%;
   text-align: center;
+  border: 1px solid black;
+}
+
+.other {
+  justify-content: left
 }

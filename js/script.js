@@ -17,10 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBox = document.getElementById('search-box');
   const searchBtn = document.getElementById('search-btn');
 
+// == SEARCH FOR SPECIFIC SEQUENCE == //
 
+// Function to display sequence that was searched for:
+  // const displaySequence = (sequence) => {
+  //   const sequenceDiv = document.getElementById('sequence');
+  //   sequenceDiv.innerHTML = sequence;
+  // }
+
+// Search button functionality:
   searchBtn.addEventListener('click', () => {
     console.log(searchBox.value)
+    searchBox.value 
   })
+
+// == DISPLAYING DATA FROM API == //
 
   // Function to create a separate parent div for each allele:
   const alleleDivCreator = () => {
@@ -109,6 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
           isotypeSorter(newParentDiv, alleleString);
 
         }
+
+     //search button functionality 
+
     }
 
     })
@@ -117,22 +131,5 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((error) => {
       console.log('Error fetching data from API', error);
     })
-
-    // Event listener for search button:
-    // searchBtn.addEventListener('click', () => {
-    //   const searchInput = searchBox.value;
-    //   console.log(searchInput);
-    //   const allAlleles = document.querySelectorAll('.allele');
-    //   console.log(allAlleles);
-    //   for (let i = 0; i < allAlleles.length; i++) {
-    //     const alleleName = allAlleles[i].lastChild.innerText;
-    //     console.log(alleleName);
-    //     if (alleleName.includes(searchInput)) {
-    //       allAlleles[i].style.display = 'block';
-    //     } else {
-    //       allAlleles[i].style.display = 'none';
-    //     }
-    //   }
-    // })
 
   })
