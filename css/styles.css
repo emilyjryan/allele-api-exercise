@@ -42,6 +42,7 @@ body {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  margin-left: 0px;
 }
 
 .find {
@@ -79,6 +80,7 @@ body {
 
 .allele-div {
   background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
 }
 
 .hla-class-header {
