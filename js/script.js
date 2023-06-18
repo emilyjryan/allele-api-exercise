@@ -47,13 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Display match:
-    // const matchName = searchLoop(searchValue, nameArray)
-    // let matchDiv = document.createElement('div');
-    // matchDiv.classList.add('match-div');
-    // matchDiv.innerHTML = matchName;
-    // main.appendChild(matchDiv);
-
 // == DISPLAYING DATA FROM API == //
 
   // Function to create a separate parent div for each allele:
@@ -144,18 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-     //search button functionality 
+     // Search button functionality:
       searchBtn.addEventListener('click', () => {
-        results.innerHTML = 'Results: '
+        results.innerHTML = 'Search results: '
         let searchValue = searchBox.value;
         console.log('search value', searchValue)
         let searchMatchIndex = searchLoop(searchValue, alleleData)
-        console.log(searchMatchIndex)
         let matchAccession = alleleData[searchMatchIndex].accession;
-        console.log(matchAccession)
 
-        // Create and display div with match name on it:
-        results.innerHTML += matchAccession += ': ' + searchValue;
+        // Display div with match pair:
+        results.innerHTML += matchAccession += ' = ' + searchValue;
         results.style.display = 'block';
       })
 
