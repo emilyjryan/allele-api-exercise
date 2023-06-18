@@ -1,7 +1,6 @@
 * {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  /* background-color: rgba(0, 0, 255, 0.2); */
 }
 
 h1, h3, h4 {
@@ -74,6 +73,10 @@ body {
   cursor: pointer;
 }
 
+.allele-div {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .hla-class-header {
   color: pink;
   font-size: 1.8em;
@@ -82,7 +85,6 @@ body {
   border-radius: 10px;
   display: inline-flex;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 
@@ -95,10 +97,6 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-}
-
-#space {
-  /* display: none; */
 }
 
 .isotype {
@@ -121,7 +119,6 @@ body {
 }
 
 .allele-element {
-  /* margin: 5px; */
   padding: 5px;
   font-size: 0.6em;
   color: black;
