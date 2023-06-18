@@ -16,20 +16,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const allAlleles = document.getElementById('all-alleles');
   const searchBox = document.getElementById('search-box');
   const searchBtn = document.getElementById('search-btn');
+  const results = document.getElementById('results');
 
 // == SEARCH FOR SPECIFIC SEQUENCE == //
 
-// Function to display sequence that was searched for:
-  // const displaySequence = (sequence) => {
-  //   const sequenceDiv = document.getElementById('sequence');
-  //   sequenceDiv.innerHTML = sequence;
-  // }
+// Create array with only 'name' entries from main data array:
+  const allNamesArray = (data) => {
+    let namesArray = [];
+    for (let i = 0; i < data.length; i++) {
+      namesArray.push(data[i].name)
+    }
+    return namesArray 
+  }
 
-// Search button functionality:
-  searchBtn.addEventListener('click', () => {
-    console.log(searchBox.value)
-    searchBox.value 
-  })
+// Search loop functionality:
+  const searchLoop = (searchValue, allData) => {
+    const nameArray = allNamesArray(allData)
+    let match = false;
+    for (let i = 0; i < nameArray.length; i++) {
+      if (searchValue === nameArray[i]) {
+        console.log('match', nameArray[i])
+        match = true;
+        return i
+      }
+    }
+    if (match === false) {
+      console.log('no match')
+      results.style.display = 'block';
+      results.innerHTML = 'No results found'
+    }
+  }
+
+  // Display match:
+    // const matchName = searchLoop(searchValue, nameArray)
+    // let matchDiv = document.createElement('div');
+    // matchDiv.classList.add('match-div');
+    // matchDiv.innerHTML = matchName;
+    // main.appendChild(matchDiv);
 
 // == DISPLAYING DATA FROM API == //
 
@@ -122,6 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
      //search button functionality 
+      searchBtn.addEventListener('click', () => {
+        results.innerHTML = 'Results: '
+        let searchValue = searchBox.value;
+        console.log('search value', searchValue)
+        let searchMatchIndex = searchLoop(searchValue, alleleData)
+        console.log(searchMatchIndex)
+        let matchAccession = alleleData[searchMatchIndex].accession;
+        console.log(matchAccession)
+
+        // Create and display div with match name on it:
+        results.innerHTML += matchAccession += ': ' + searchValue;
+        results.style.display = 'block';
+      })
 
     }
 
