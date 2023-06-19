@@ -110,7 +110,7 @@ body {
   border: 2px solid black;
   border-radius: 10px;
   height: 70vh;
-  width: 20vw;
+  width: 23vw;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -119,15 +119,21 @@ body {
   opacity: 0.85;
 }
 
-::-webkit-scrollbar {
+div::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
 }
 
-::-webkit-scrollbar-thumb {
+div::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.entry {
+  font-size: 0.5em;
+  color: white;
+  text-align: center;
 }
 
 .allele {
@@ -137,14 +143,14 @@ body {
 
 .allele-element {
   padding: 5px;
-  font-size: 0.6em;
+  font-size: 0.4em;
   color: black;
   font-weight: 400;
   width: 100%;
-  text-align: center;
+  text-align: left;
   border: 1px solid black;
 }
 
-.other {
-  justify-content: left
+#other-hla-header {
+  justify-content: left;
 }

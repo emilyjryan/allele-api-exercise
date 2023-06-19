@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const main = document.getElementById('main-header');
   const loadingDiv = document.getElementById('loading');
   const hlaA = document.getElementById('hla-a');
+  const hlaHeader = document.getElementById('hla-a-header')
   const hlaB = document.getElementById('hla-b');
   const hlaC = document.getElementById('hla-c');
   const hlaDP = document.getElementById('hla-dp');
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBox = document.getElementById('search-box');
   const searchBtn = document.getElementById('search-btn');
   const results = document.getElementById('results');
+  const allColumns = [hlaA, hlaB, hlaC, hlaDP, hlaDQ, hlaDR, other]
+
 
 // == SEARCH FOR SPECIFIC SEQUENCE == //
 
@@ -62,6 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
     alleleElement.classList.add('allele-element');
     parentDiv.appendChild(alleleElement)
     return alleleElement;
+  }
+
+  // Function to display number of entries in each isotype section:
+  const entryCounter = (parentDiv) => {
+    const headerDiv = parentDiv.parentElement
+    const numberOfChildren = parentDiv.childElementCount
+    let entryDiv = document.createElement('div');
+    entryDiv.classList.add('entry');
+    entryDiv.innerHTML = numberOfChildren + ' entries'
+    headerDiv.appendChild(entryDiv)
+    return entryDiv
   }
 
   // Function to conditionally sort data for display based on isotype:
@@ -135,20 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
           // Sorting them for display based on isotype:
           isotypeSorter(newParentDiv, alleleString);
 
+          
         }
 
-     // Search button functionality:
-      searchBtn.addEventListener('click', () => {
-        results.innerHTML = 'Search results: '
-        let searchValue = searchBox.value;
-        console.log('search value', searchValue)
-        let searchMatchIndex = searchLoop(searchValue, alleleData)
-        let matchAccession = alleleData[searchMatchIndex].accession;
+        // Displaying total entries beneath isotype columns:
+        allColumns.forEach(column => entryCounter(column))
 
-        // Display div with match pair:
-        results.innerHTML += matchAccession += ' = ' + searchValue;
-        results.style.display = 'block';
-      })
+        // Search button functionality:
+        searchBtn.addEventListener('click', () => {
+          results.innerHTML = 'Search results: '
+          let searchValue = searchBox.value;
+          console.log('search value', searchValue)
+          let searchMatchIndex = searchLoop(searchValue, alleleData)
+          let matchAccession = alleleData[searchMatchIndex].accession;
+
+          // Display div with match pair:
+          results.innerHTML += matchAccession += ' = ' + searchValue;
+          results.style.display = 'block';
+        })
 
     }
 
