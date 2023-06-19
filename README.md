@@ -6,6 +6,9 @@ The API used for the specific data displayed can be found [here](https://www.ebi
 ## **Live deployment:**
 https://emilyjryan.github.io/allele-api-exercise/
 
+## **Design**
+![homepage-png](imgs/hla-typing-homepage.png)
+
 ## **Installation Instructions:**
 * Fork and clone this repository to your local device
 * Open `index.html` with your live server or navigate to http://localhost:5501.
