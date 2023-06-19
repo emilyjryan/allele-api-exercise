@@ -1,48 +1,42 @@
 # RESTful API Exercise
-## Using the IPD Database API to display allele data
 
-### Steps
+## **Created by Emily Ryan for Scisco Genetics**
+### The information provided on this website comes from the [Immuno Polymorphism Database (IPD)](https://www.ebi.ac.uk/ipd/).
+### The API used for the specific data displayed can be found [here](https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=1000&project=HLA).
+<b></b>
+## **Live deployment:**
+https://emilyjryan.github.io/allele-api-exercise/
 
-* Created new github repository to keep things organized and created all the necessary files for building the webpage.
+## **Installation Instructions:**
+* Fork and clone this repository to your local device
+* Open `index.html` with your live server or navigate to http://localhost:5501.
 
-* Tested the API in Thunder Client, success
+## **Project Steps**:
 
-* Linked HTML, CSS, and JS files together
+1. I started by creating a new github repository to keep things organized and created all the necessary files for building the webpage. I decided to use a tech stack of JavaScript (JS), HTML5, and CSS.
 
-* Created basic HTML structure for the website
+2. I tested the API first in Thunder Client to ensure I could get the data successfully and also to examine the structure of the data received.
 
-* Created JS variables from HTML elements for DOM manipulation
+3. I then linked my HTML, CSS, and JS files together. I created the basic overall HTML structure for the website. I created JS variables from the HTML elements for easy access for DOM manipulation.
 
-* Wrote fetch request functioning, converted data to json, evaluated structure of data, added error catching at the end
+4. Next I wrote the basic fetch request function, converted the data to json, used console.logs to evaluate the structure of the data, and added error catching functionality at the end in case there was an issue with the request. I created a variable array to hold all incoming data from request.
 
-* Created a variable array to hold all incoming data from request
+5. I built a for loop to run through all the data and create new HTML elements for each allele accession/name pair. I added some conditional logic (if/else) to the functionality to aid in organizing the data based on isotype starting letter for easier reading of the data.
 
-* Built a for loops to loop through all data and create a new HTML element for each allele accession/name pair
+6. Then I added some styling and page structure, including columns, scrolling functionality, and scrollbars for all the data. I then attached a background image.
 
-* Added conditional logic (if/else) to decide which parent div to append the new child to, based on isotype starting letter
+7. To make my code easier to read, I moved some of the functions originally written within the fetch functionality back up into the global scope for better readability and organization.
 
-* Added some basic styling and page structure, including columns and scrolling for all the data.
+8. Since the data sometimes takes a few seconds to load in the browser, I added a loading message to display while the user waits.
 
-* Added a background image and added some more styling
+9. I then created a search input and button with functionality so a user can search for a specific allele sequence. The function returns the specific sequence as well as the accession number.
 
-* Moved some of the functions with the fetch function into the global scope for better readability and organization
+10. To help the reader better understand the contents of each column, I added functionality for displaying the total number of entries for each column.
 
-* Added a loading message to display while data loads onto the browser
+## **Decisions**
 
-* Created a search input and button with functionality
+### Client Side Rendering:
+I decided to use client side rendering because initially it seemed like the simpler way to go, even though it would potentially mean the screen load time was slower. After testing the API on 1000 data points, I noticed it only took a few seconds to load so I decided that client-side rendering would be sufficient for a project this size. However, with a larger set of data or a longer load time, I would consider using server-side rendering with node instead to improve the speed of load on initial render.
 
-* Added scrollbar visibility to aid user in scrolling through each column of data
-
-* Added functionality for displaying total number of entries for each column
-
-### Decisions
-
-#### Client Side Rendering:
-I decided to use client side rendering because initially it seemed like the simpler way to go, even though it would potentially mean the screen load time was slower.
-
-#### Search functionality:
+### Search functionality:
 I created a basic search function that allows the user to search for a specific sequence and find out which sample number or "accession" it came from. However, it doesn't take into account any "fuzzy" search functionality that would display similar sequences in case the user mistypes a number in their search. I would have also liked to include a reverse search where a user could look up a sample number (e.g. HLA00032) and the output would be the actual sequence data. 
-
-### Alternatives
-
-* In the future I could see myself transforming this project into server-side rendering using node to improve the speed of load on initial render.
