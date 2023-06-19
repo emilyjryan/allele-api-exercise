@@ -2,7 +2,7 @@
 
 ## **Created by Emily Ryan for Scisco Genetics**
 The information provided on this website comes from the [Immuno Polymorphism Database (IPD)](https://www.ebi.ac.uk/ipd/).
-The API used for the specific data displayed can be found [here](https://www.ebi.ac.uk/cgi-bin/ipd/api/allele?limit=1000&project=HLA).
+The API used for the specific data displayed can be found [here](https://www.ebi.ac.uk/ipd/rest/#/Allele%20API/listAlleles).
 ## **Live deployment:**
 https://emilyjryan.github.io/allele-api-exercise/
 
