@@ -31,6 +31,10 @@
 
 * Created a search input and button with functionality
 
+* Added scrollbar visibility to aid user in scrolling through each column of data
+
+* Added functionality for displaying total number of entries for each column
+
 ### Decisions
 
 #### Client Side Rendering:
